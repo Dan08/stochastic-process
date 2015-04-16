@@ -1,0 +1,401 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework 3} % Assignment title
+\newcommand{\hmwkDueDate}{Sep 29,\ 2014} % Due date
+\newcommand{\hmwkClass}{MTH 9831} % Course/class
+\newcommand{\hmwkClassTime}{Weiyi Chen, Zhenfeng Liang, Mo Shen} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(a)}
+    Since both of pairs $X_{t_1}, X_{t_2}$ and $B_{t_1}, B_{t_2}$ (conditioned on $B_1 = 0$) are jointly normal distributed, the problem boils down to the determination of their expectations and covariance matrices. The expectation of $X_t$
+    \begin{equation}
+      E(X_t) = E(B_t) - E(tB_1) = 0 - t \cdot 0 = 0
+    \end{equation}
+    The expectation of $B_{t}$ (conditioned on $B_1 = 0$) is
+    \begin{equation}
+      E(B_t|B_1=0) = E(tW_t|1\cdot W_1=0) = tE(W_t-W_1|W_1 = 0) = 0 
+    \end{equation}
+    The covariance matrix of $X_{t_1}, X_{t_2}$ is
+    \begin{equation}
+      \begin{split}
+        Cov(X_{t_1}, X_{t_2}) &= Cov(B_{t_1}-t_1B_{1},B_{t_2}-t_2B_{1}) \\
+        &= E(B_{t_1}B_{t_2}) - t_1E(B_{t_2}B_{1}) - t_2E(B_{t_1}B_{1}) + t_1t_2E(B_1^2)\\
+        &= (t_1 \wedge t_2) - t_1(t_2 \wedge 1) - t_2(t_1 \wedge 1) + t_1t_2 (1 \wedge 1) \\
+        &= t_1(1-t_2)
+      \end{split}
+    \end{equation}
+    The covariance matrix of $B_{t_1}, B_{t_2}$ is
+    \begin{equation}
+      \begin{split}
+        Cov(B_{t_1},B_{t_2}|B_1=0) &= E(B_{t_1}B_{t_2}|B_1=0) \\
+        &= t_1t_2E(W_{1/t_1}W_{1/t_2}|W_1=0) \\
+        &= t_1t_2E(W_{1/t_1-1}W_{1/t_2-1}) \\
+        &= t_1t_2(1/t_1-1 \wedge 1/t_2-1) \\
+        &= t_1(1-t_2) 
+      \end{split}
+    \end{equation}
+    Their expectations and covariance matrices are the same, so their joint distributions are the same.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    The transition density of $X_t$ is
+    \begin{equation}
+      P(X_s=y|X_t=x) = \frac{P(X_s=y,X_t=x)}{P(X_t=x)} = \frac{\frac{\partial}{\partial x \partial y} P(X_s\le y, X_t \le x)}{\frac{\partial}{\partial x}P(X_t\le x)}
+    \end{equation}
+    Since the distribution of Brownian bridge is $X_t \sim N(0,t(1-t))$, and from last part we know $Cov(X_s, X_t) = t(1-s)$, then the correlation matrix is
+    \begin{equation}
+      \rho_{X_s,X_t} = \frac{Cov(X_s, X_t)}{\sigma_{X_s}\sigma_{X_t}} = \sqrt{\frac{t(1-s)}{s(1-t)}}
+    \end{equation}
+    The joint distribution of $X_s, X_t$ is
+    \begin{equation}
+      \begin{split}
+        P[X_s\le y, X_t \le x] &= \frac{1}{2\pi s(1-s)t(1-t)} \frac{1}{\sqrt{1-\rho^2}} \\
+      &\int_{-\infty}^x \int_{-\infty}^y \exp\{\frac{1}{2(1-\rho^2)}[\frac{u^2}{s(1-s)}+\frac{v^2}{t(1-t)}+\frac{2\rho uv}{\sqrt{st(1-s(1-t))}}]\} dudv
+      \end{split}
+    \end{equation}
+    Put $\rho$ into the formula and take the second derivatives, we have
+    \begin{align}
+      \frac{\partial}{\partial x \partial y} P(X_s\le y, X_t \le x) &= \frac{1}{2\pi\sqrt{t(1-s)(s-t)}}\exp\{\frac{-s(1-t)}{2(s-t)}[\frac{y^2}{s(1-s)} + \frac{x^2}{t(1-t)} + \frac{2xy}{s(1-t)}] \} \\
+      \frac{\partial}{\partial x}P(X_t\le x) &= \frac{1}{\sqrt{2\pi t(1-t)}} \exp\{-\frac{x^2}{t(1-t)}\}
+    \end{align}
+    Therefore we derive
+    \begin{equation}
+      P(X_s=y|X_t=x) = \frac{\sqrt{1-t}}{\sqrt{2\pi(1-s)(s-t)}} \exp\{\frac{-(1-t)y^2}{2(s-t)(1-s)} - \frac{sx^2}{2t(s-t)} + \frac{xy}{s-t} - \frac{x^2}{t(1-t)} \}
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(a)}
+    The infinitesimal generator is
+    \begin{equation}
+      Lf(x) = \lim_{h\to0} \frac{1}{h} E[f(X_{t+h})|X_t=a] - f(a)
+    \end{equation}
+    where
+    \begin{equation}
+      E[f(X_{t+h})|X_t=a] = E[a+\sigma B_h+\mu h] = \int_{-\infty}^{\infty} \frac{exp[-\frac{(y-\mu h)^2}{2\sigma^2h}]}{\sqrt{2\pi h\sigma^2}} f(a+y)dy
+    \end{equation}
+    where $y = \sigma B_h + \mu h$ with $E(y) = \mu h$ and $Var(y) = \sigma^2 h$. We continue to let $y = \sigma \sqrt{h}$, we have
+    \begin{equation}
+      E[f(X_{t+h})|X_t=a] = \int_{-\infty}^{\infty} \frac{\exp[-\frac{1}{2}(z-\frac{\mu}{\sigma}\sqrt{h})^2]}{\sqrt{2\pi}}f(a+\sigma\frac{h}z)dz
+    \end{equation}
+    Using taylor expansion we derive
+    \begin{equation}
+      E[f(X_{t+h})|X_t=a] = f(a) + f'(a)\sigma\sqrt{h} \frac{\mu h}{\sigma} + \frac{\sigma^2h}{2}f''(a)(1+\frac{\mu^2h}{\sigma^2}) + O(h^{3/2})
+    \end{equation}
+    Then
+    \begin{equation}
+      \begin{split}
+        Lf(x) &= \lim_{h\to0} \frac{1}{h} E[f'(a)\sigma\sqrt{h} \frac{\mu h}{\sigma} + \frac{\sigma^2h}{2}f''(a)(1+\frac{\mu^2h}{\sigma^2}) + O(h^{3/2})] \\
+      &= \mu f'(a) + \frac{\sigma^2}{2} f''(a)
+      \end{split}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Following the same step in part(a), we have
+    \begin{equation}
+      E[f(X_{t+h})|X_t=a] = E[f(X_h+a)]
+    \end{equation}
+    where
+    \begin{equation}
+      f(X_h+a) = f(a) + f'(a)X_h + \frac{1}{2}f''(a)X_h^2 + \dots
+    \end{equation}
+    Then
+    \begin{equation}
+      \begin{split}
+        E[f(X_h+a)] &= E[f(a) + f'(a)X_h + \frac{1}{2}f''(a)X_h^2 + \dots] \\
+        &= f(a) + f'(a)E(B_{\tau(h)}) + \frac{1}{2}f''(a)E(B_{\tau(h)}^2) \\
+        &= f(a) + \frac{1}{2}\tau(h) + O(h^2)
+      \end{split}
+    \end{equation}
+    The infinitesimal generator is 
+    \begin{equation}
+      Lf(x) = \lim_{h\to0} \frac{1}{2} f''(a) \frac{\int_0^h \theta(s)ds}{h}
+    \end{equation}
+    Using L'Hopital rule, we derive
+    \begin{equation}
+      Lf(x) = \frac{1}{2} f''(a) \lim_{h\to0}  \frac{\theta(h)}{1} = \frac{1}{2} f''(a)\theta(0)
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  According to reflection principle, we have
+  \begin{align}
+    P[m_t \le m] &= 2P[B_t \le m] \\
+    P[m_t \le m, B_t \ge B] &= P[B_t \le 2m-B]
+  \end{align}
+  Then
+  \begin{equation}
+    \begin{split}
+      P[m_t \le m, B_t \le B] &= P[m_t \le m] - P[m_t \le m, B_t \ge B] \\
+      &= 2P[B_t \le m] - P[B_t \le 2m-B] \\
+      &= 2N(\frac{m}{\sqrt{t}}) - N(\frac{\sqrt{2m-B}}{\sqrt{t}})
+    \end{split}
+  \end{equation}
+  where $N(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{t} e^{-x^2/2}dx$. Therefore,
+  \begin{equation}
+    \frac{\partial}{\partial B} P[m_t \le m, B_t \le B] = \frac{1}{\sqrt{t}} N'(\frac{\sqrt{2m-B}}{\sqrt{t}})
+  \end{equation}
+  and
+  \begin{equation}
+    \frac{\partial}{\partial B\partial m} P[m_t \le m, B_t \le B] = \frac{2}{t} N''(\frac{\sqrt{2m-B}}{\sqrt{t}})
+  \end{equation}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{homeworkProblem}[Problem 5]
+  \begin{homeworkSection}{(a)}
+    $X_t$ is normal distribution with expectation as of
+    \begin{equation}
+      E(X_t) = \int_0^t r(s)ds
+    \end{equation}
+    and variance as of
+    \begin{equation}
+      Var(X_t) = Var(\int_0^t \sigma(s)dB_s) = \int_0^t \sigma^2(s)ds
+    \end{equation}
+    Therefore $X_t \sim N(\int_0^t r(s)ds, \int_0^t \sigma^2(s)ds)$. \\
+    $S_t$ is log-normal distribution with expectation as of
+    \begin{equation}
+      E(\ln(S_t)) = \ln(S_0) - \frac{1}{2}\int_0^t \sigma^2(s)ds + E(X_t) = \ln(S_0)+\int_0^t[r(s)-\frac{\sigma^2(s)}{2}]ds
+    \end{equation}
+    and variance as of
+    \begin{equation}
+      Var(\ln(S_t)) = Var(X_t) = \int_0^t \sigma^2(s)ds
+    \end{equation}
+    Therefore $\ln(S_t) \sim N(\ln(S_0)+\int_0^t[r(s)-\frac{\sigma^2(s)}{2}]ds, \int_0^t \sigma^2(s)ds)$.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    The price of the call is 
+    \begin{equation}
+      \begin{split}
+        C &= \exp[-\int_0^Tr(t)dt]E[(S_T-K)^+] \\
+      &= \exp[-\int_0^Tr(t)dt][E(S_TI_{S_T\ge K})-KE(I_{S_T\ge K})]
+      \end{split}
+    \end{equation}
+    Now we want to see when $S_t \ge K$, i.e. (let $\mu_t=\int_0^tr(s)ds, \Sigma_t = \int_0^t\sigma^2(s)dt$),
+    \begin{equation}
+      \begin{split}
+        &S_t = S_0 \exp[X_t - \frac{1}{2}\int_0^t\sigma^2(s)ds] > K \\
+        &\Rightarrow X_t > \ln(K/S_0) + \frac{1}{2}\int_0^t\sigma^2(s)ds\\
+        &\Rightarrow \mu_t + \sqrt{\Sigma_t}Z > \ln(K/S_0) + \frac{1}{2}\Sigma_t \\
+        &\Rightarrow Z > \frac{\ln(K/S_0) + \frac{1}{2}\Sigma_t - \mu_t}{\sqrt{\Sigma_t}}
+      \end{split}
+    \end{equation}
+    Therefore we derive
+    \begin{equation}
+      E(I_{S_T\ge K}) = N(-\frac{\ln(K/S_0) + \frac{1}{2}\Sigma_T - \mu_T}{\sqrt{\Sigma_T}})
+    \end{equation}
+    In similar way, we are able to solve $E(S_TI_{S_T\ge K})$ as of
+    \begin{equation}
+      E(S_TI_{S_T\ge K}) = \frac{S_0e^{\mu_T}}{\sqrt{2\pi}} \int_{-\infty}^{-w-\sqrt{\Sigma_T}} e^{-t^2/2}dt = \frac{S_0e^{\mu_0}}{\sqrt{2\pi}} N(-w-\sqrt{\Sigma_T})
+    \end{equation}
+    where 
+    \begin{equation}
+       w = \frac{\ln(K/S_0) + \frac{1}{2}\Sigma_t - \mu_t}{\sqrt{\Sigma_t}}
+    \end{equation}
+    Finally we put all these stuffs into the formula of pricing call, we derive
+    \begin{equation}
+      C = \exp[-\int_0^Tr(t)dt][E(S_TI_{S_T\ge K})-KE(I_{S_T\ge K})] = S_0N(-w-\sqrt{\Sigma_T})-Ke^{-\mu_T}N(-w)
+    \end{equation}
+    where 
+    \begin{equation}
+      N(t) = \int_{-\infty}^t \frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz
+    \end{equation}
+    and $w,\Sigma_t, \mu_t$ are given above.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[Problem 6]
+  According to the definition,
+  \begin{equation}
+    \int_0^tB_s^2dB_s = \lim_{||\pi_n||\to0} \sum_{t=1}^n B_{t_{k-1}}^2\Delta B_{t_k}
+  \end{equation}
+  From our last homework we have the cubic variation as 0, therefore,
+  \begin{equation}
+    \begin{split}
+      3\int_0^tB_s^2dB_s &= \lim_{||\pi_n||\to0} \sum_{t=1}^n 3B_{t_{k-1}}^2\Delta B_{t_k} + (B_{t_k}-B_{t_{k-1}})^3 \\
+      &= \lim_{||\pi_n||\to0} \sum_{t=1}^n [(B_{t_k}^3 - B_{t_{k-1}}^3) - 3B_{t_k-1}(B_{t_k}-B_{t_{k-1}})^2] \\
+      &= B_T^3 - 3\lim_{||\pi_n||\to0} \sum_{t=1}^n B_{t_k-1}(B_{t_k}-B_{t_{k-1}})^2 \\
+      &= B_T^3 - 3\int_0^TB_t (dB_t)^2 \\
+      &= B_T^3 - 3\int_0^TB_tdt
+    \end{split}
+  \end{equation}
+\end{homeworkProblem}
+
+\end{document}

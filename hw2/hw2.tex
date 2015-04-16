@@ -1,0 +1,545 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework 2} % Assignment title
+\newcommand{\hmwkDueDate}{Sep 22,\ 2014} % Due date
+\newcommand{\hmwkClass}{MTH 9831} % Course/class
+\newcommand{\hmwkClassTime}{Weiyi Chen, Zhenfeng Liang, Mo Shen} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{'Only if' part:}
+    According to the tower rule,
+      \begin{equation}
+          E\left[\sum_{t=1}^N H_t \Delta X_t\right] = E\left[E\left[\sum_{t=1}^N H_t \Delta X_t | \mathcal{F}_{t-1}\right]\right]
+      \end{equation}
+      according to linearity of expectation,
+      \begin{equation}
+        E\left[E\left[\sum_{t=1}^N H_t \Delta X_t | \mathcal{F}_{t-1}\right]\right] = E\left[\sum_{t=1}^N E\left[H_t\Delta X_t| \mathcal{F}_{t-1}\right]\right]
+      \end{equation}
+      since $H_t$ is predictable,
+      \begin{equation}
+        E\left[\sum_{t=1}^N E\left[H_t\Delta X_t| \mathcal{F}_{t-1}\right]\right] = E\left[\sum_{t=1}^N H_t E\left[X_t - X_{t-1}|\mathcal{F}_{t-1}\right]\right]
+      \end{equation}
+      since $X_t$ is an adapted stochastic process
+      \begin{equation}
+        E\left[\sum_{t=1}^N H_t E\left[X_t - X_{t-1}|\mathcal{F}_{t-1}\right]\right] = E\left[\sum_{t=1}^N H_t (X_{t-1} - X_{t-1})\right] = 0
+      \end{equation}
+    \end{homeworkSection}
+    \begin{homeworkSection}{'If' part:}
+    Pick an event $A_s \in \mathcal{F}_{s-1}$ for $A$ where $s \in \{1,2,\dots,N\}$, then let
+    \begin{equation}
+      H_t = \begin{cases} 
+        0, &\text{ if } s \neq t\\
+        1_{A_s}, &\text{ if } s = t
+      \end{cases}
+    \end{equation}
+    then
+    \begin{equation}
+      \sum_{t=1}^N H_t \Delta X_t = 1_{A_s} (X_s - X_{s-1})
+    \end{equation}
+    We know $E(1_{A_s}(X_s - X_{s-1})) = 0$, therefore
+    \begin{equation}
+      E(1_{A_s}X_s) = E(1_{A_s}X_{s-1})
+    \end{equation}
+    that is,
+    \begin{equation}
+      \int_{A_s} X_s dP = \int_{A_s} X_{s-1} dP
+    \end{equation}
+    Since $A_s \in \mathcal{F}_{s-1}$ is arbitrary, then
+    \begin{equation}
+      E(X_s|\mathcal{F}_{s-1}) = E(X_{s-1}|F_{s-1}) = X_{s-1}
+    \end{equation}
+    $s$ is also arbitrage, therefore $X_t$ is a martingale.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(a)}
+    According to the definition,
+    \begin{equation}
+      \{S \wedge T \le t\} = \{S \le t \text{ or } T \le t \} = \{S \le t\} \cup \{T \le t\} \in \mathcal{F}_t
+    \end{equation}
+    so $S \wedge T$ is stopping time. \\
+    Similarly,
+    \begin{equation}
+      \{S \vee T \le t\} = \{S \le t \text{ and } T \le t \} = \{S \le t\} \cap \{T \le t\} \in \mathcal{F}_t
+    \end{equation}
+    so $S \vee T$ is stopping time.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    For each fixed $\omega$, I claim $S(\omega)+T(\omega)<t$ iff there are positive rationals $p,q$ with $p+q\le t$ and $S(\omega)\le p, T(\omega)\le q$. Suppose $S(\omega)+T(\omega) \le t$; we can find a rational $r$ with $S(\omega)+T(\omega) \le r \le t$. Then $S(\omega) \le r - T(\omega)$, so we can find $p$ with $S(\omega) \le p \le r-T(\omega)$. Setting $q=r-p$ we see that we have $T(\omega) \le q$. The reverse implication is obvious. \\
+    Thus we have,
+    \begin{equation}
+      \{S+T \le t\} = \bigcup_{p,q \in Q^+ , p+q \le t}^t(\{S \le p\}) \cap \{T \le q\})
+    \end{equation}
+    Since $\{S \le p\} \in \mathcal{F}_p \subseteq {F}_t$ and  $\{T \le q\} \in \mathcal{F}_q \subseteq {F}_t$. Thus $\{S+T<t\}$ is a countable union of events from $\mathcal{F}_t$, and so it itself in $\mathcal{F}_t$. \\
+    Similarly for $S\cdot T$, we have (only in decrete case)
+    \begin{equation}
+      \{S\cdot T \le t\} = \bigcup_{p,q \in Q^+ , pq \le t}^t(\{S \le p\}) \cap \{T \le q\})
+    \end{equation}
+    Same reason $\{S\cdot T<t\}$ is a countable union of events from $\mathcal{F}_t$, and so it itself in $\mathcal{F}_t$.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(a)}
+    Since $X_0 < a$ and $\tau_a = \inf\{t\ge0: X_t \ge a\}$, then
+    \begin{equation}
+      \{\tau_a = n\} = \{X_0, X_1, \dots, X_{n-1} < a, X_n \ge a \} = \bigcap_{j=0}^{n-1} \{X_j < a\} \cap \{X_n \ge a\}
+    \end{equation}
+    by 2(a), it is a countable intersection of events from $\mathcal{F}_t$, and so it itself in $\mathcal{F}_t$.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Since $X_0 > b$ and $\tau_b = \inf\{t\ge0: X_t \le b\}$, then
+    \begin{equation}
+      \{\tau_b = n\} = \{X_0, X_1, \dots, X_{n-1} > b, X_n \le b \} = \bigcap_{j=0}^{n-1} \{X_j > b\} \cap \{X_n \le b\}
+    \end{equation}
+    by 2(a), it is a countable intersection of events from $\mathcal{F}_t$, and so it itself in $\mathcal{F}_t$.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(a)}
+    $X_t = -B_t$ is a Brownian motion by the following facts:
+    \begin{itemize}
+      \item $X_0 = -B_0 = 0$
+      \item $X_t$ is almost surely continuous since $B_t$ is almost surely continuous.
+      \item $X_t$ has independent increments since $B_t$ has independent increments.
+      \item $X_t - X_s = B_s - B_t \sim N(0, s-t)$ since $B_t - X_s \sim N(0, t-s)$.
+    \end{itemize}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    $Y_t = \frac{1}{c}B_{c^2t}$ is a Brownian motion by the following facts:
+    \begin{itemize}
+      \item Clearly $Y_0 = \frac{1}{c} B_0 = 0$
+      \item If $0 \le t_1 \le t_2 \le \dots \le t_n$, then $0 \le c^2t_1 \le \dots \le c^2 t_n$. By the definition of Brownian motion,
+      \begin{equation}
+        B(c^2t_n) - B(c^2t_{n-1}), \dots, B(c^2t_2) - B(c^2t_1)   
+      \end{equation}
+      are independent random variables. It then follows that
+      \begin{equation}
+        \frac{1}{c}B(c^2t_n) - \frac{1}{c}B(c^2t_{n-1}), \dots, \frac{1}{c}B(c^2t_2) - \frac{1}{c}B(c^2t_1)   
+      \end{equation}
+      are independent random variables, i.e. the stochastic process $\{Y_t|0 \le t\}$ has independent increments.
+      \item The fact that $Y_{t + h} - Y_{t}$ is normally distributed follows immediately from the fact that $B(c^2t + c^2h) - B(c^2t)$ is normally distributed. Furthermore,
+      \begin{equation}
+        E[Y_{t+h} - Y_t] = E[\frac{1}{c}B(c^2t + c^2h) - \frac{1}{c}B(c^2t)] = \frac{1}{c}E[B(c^2t + c^2h) - B(c^2t)] = 0
+      \end{equation}
+      where the last equality follows from the definition of Brownian Motion. To show that the variance equals $h$, observe that
+      \begin{equation}
+        var[Y_{t+h}-Y_t] = var[\frac{1}{c}B(c^2t + c^2h) - \frac{1}{c}B(c^2t)] = \frac{1}{c^2}[B(c^2t + c^2h) - B(c^2t)] = \frac{1}{c^2} c^2h = h
+      \end{equation}
+      \item Because the function $t \to B(t)$ is almost surely continuous, the function $t \to Y_t = \frac{1}{c}B(c^2h)$ is the composition of (almost surely) continuous functions and is therefore almost surely continuous. 
+    \end{itemize}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(c)}
+    $Z_t = tB_{1/t}$ is a Brownian motion by the following facts:
+    \begin{itemize}
+      \item $Z_0 = 0$ given
+      \item For Brownian motions,
+      \begin{equation}
+        Cov(B_t, B_{t+s}) = Cov(B_t, B_{t+s} − B_t) + Cov(B_t, B_t) = t
+      \end{equation}
+      for all $t, s \ge 0$. For our process $Z_t$, we compute the Covariance function for $s < t$,
+      \begin{equation}
+        Cov[Z_t, Z_{t+s}] = Cov[tB_{1/t}, (t+s)B(t_{1/(t+s)}))] = t(t+s)Cov(B_{1/t},B_{1/(t+s)}) = t
+      \end{equation}
+      So 
+      \begin{equation}
+        Cov[Z_t, Z_{t+s}-Z_t] = t-t = 0
+      \end{equation}
+      Because the random variables $Z_{t+s}$ and $Z_t$ are normal, $Cov(Z_t, Z_{t+s} − Z_t) = 0$ implies that $Z_{t+s} - Z_t$ and $Z_t$ are independent. 
+      \item And 
+      \begin{equation}
+        Var(Z_{t+s} - Z_t) = Var(Z_{t+s}) + Var(Z_t) - 2Cov(Z_{t+s}, Z_t) = (t + s) + t - 2t = s
+      \end{equation}
+      so our increments are independent and have the right variances.
+      \item Continuity is clear for $t > 0$. We know that $Z_t$ has the distribution of a Brownian motion on $Q$, so
+      \begin{equation}
+        0 = \lim_{n\to\infty} Z(\frac{1}{n}) = \lim_{t\to 0}Z_t
+      \end{equation}
+      and we conclude that $Z_t$ is continuous at $t = 0$, so $Z_t$ satisfies the properties of a standard Brownian motion.
+    \end{itemize}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(1)}
+    To prove $Z_t$ is a martingale, we need to show
+    \begin{itemize}
+      \item Integrability: \begin{equation}
+        E|Z_t| = E|e^{\sigma B_t-\frac{\sigma^2t}{2}}|
+        \le E|e^{\sigma B_t}| E|e^{-\frac{\sigma^2t}{2}}|
+        \le ME|e^{-\frac{\sigma^2t}{2}}| < \infty
+      \end{equation}
+      \item Adapted: Since $B_t$ and $t$ are adapted, so is their combination $Z_t$.
+      \item The conditional expected value of the next generation: 
+      \begin{equation}
+        E(Z_t|\mathcal{F}_s) = E(e^{\sigma(B_t-B_s)}e^{\sigma B_s}|\mathcal{F}_s) E(e^{-\frac{\sigma^2(t-s)}{2}}e^{-\frac{\sigma^2s}{2}}|\mathcal{F}_s)
+      \end{equation}
+      since $B_t-B_s$ is independent of $\mathcal{F}_s$ and $B_s$ is measurable by $\mathcal{F}_s$, the equation above becomes
+      \begin{equation}
+        e^{\sigma B_s}E(e^{\sigma(B_t-B_s)}) e^{-\frac{\sigma^2(t-s)}{2}}e^{-\frac{\sigma^2s}{2}}
+      \end{equation}
+      Since $B_t - B_s \sim N(0,t-s)$, let $B_t-B_s = x$, we can show that
+      \begin{equation}
+        \begin{split}
+          E(e^{\sigma x}) &= \frac{1}{\sqrt{2\pi(t-s)}} \int_{-\infty}^{\infty} e^{\sigma x}e^{-\frac{x^2}{2(t-s)}} \\
+          &= e^{\frac{\sigma^2(t-s)}{2}} \frac{1}{\sqrt{2\pi(t-s)}}\int_{-\infty}^{\infty} e^{-\frac{(x-\sigma(t-s))^2}{2(t-s)}} \\
+          &= e^{\frac{\sigma^2(t-s)}{2}}
+        \end{split}
+      \end{equation}
+      Therefore,
+      \begin{equation}
+        E(Z_t|\mathcal{F}_s) = e^{\sigma B_s}e^{\frac{\sigma^2(t-s)}{2}}e^{-\frac{\sigma^2(t-s)}{2}}e^{-\frac{\sigma^2s}{2}}
+        = e^{\sigma B_s - \frac{\sigma^2s}{2}}
+        = Z_s
+      \end{equation}
+    \end{itemize}
+    $Z_t$ is a martingale.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(2)}
+    To prove $X_t$ is a martingale, we need to show
+    \begin{itemize}
+      \item Integrability: 
+      \begin{equation}
+        E|X_t| = E|B_t^2-t| \le E|B_t^2| + E(t) < \infty
+      \end{equation}
+      \item Adapted: since $B_t$ is adapted then so is $X_t$.
+      \item The conditional expected value of the next generation: 
+      \begin{equation}
+        \begin{split}
+          E[B_t^2-t|\mathcal{F}_s] &= E[((B_t - B_s)+B_s)]^2 - ((t-s)+s)|F_s) \\
+          &= E[(B_t-B_s)^2+2(B_t-B_s)B_s + B_s^2|F_s] - [(t-s)+s]
+        \end{split}
+      \end{equation}
+      since $B_t-B_s$ is independent of $\mathcal{F}_s$ and $B_s$ is measurable by $\mathcal{F}_s$, the equation above becomes
+      \begin{equation}
+        \begin{split}
+          E[B_t^2-t|\mathcal{F}_s] &= E[(B_t-B_s)^2)+2B_sE(B_t - B_s)+B_s^2-[(t-s)+s] \\
+          &= [t-s]+B_s^2-[(t-s)+s] \\
+          &= B_s^2-s \\
+          &= X_s
+        \end{split}
+      \end{equation}
+    \end{itemize}
+    $X_t$ is a martingale.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  Since $f$ is of finite quadratic variation, then
+  \begin{equation}
+    V_f^2(T) < \infty
+  \end{equation}
+  $g$ is of finite variation and continuous, then
+  \begin{equation}
+    V_g(T) < \infty
+  \end{equation}
+  Furthermore, 
+  \begin{equation}
+    V_f^p(T) = \lim_{||\pi|| \to 0} \sum_{j=1}^n |f(t_j) - f(t_{j-1})|^p < \infty
+  \end{equation}
+  where
+  \begin{equation}
+    ||\pi_n|| = \max_{j=1,\dots,n} \{t_j - t_{j-1}\}, \pi_n = \{0 = t_0 < t_1 < t_2 < \dots < t_n = T\}
+  \end{equation}
+  The proof that the covariation of continuous finite variation process and finite quadratic variation is zero follows from the following inequality. Here, $\pi_n$ is a partition of the interval [0,t], and $V_t(X)$ is the variation of $X$ over $[0,t]$. Using Cauchy-Schwarz inequality,
+  \begin{equation}
+    \begin{split}
+      [f,g](T) &= \lim_{||\pi|| \to 0}\sum_{j=1}^n \left(f(X_{t_j})-f(X_{t_{j-1}})\right)\left(g(X_{t_j})-g(X_{t_{j-1}})\right) \\  
+      &\le \lim_{||\pi|| \to 0} \sqrt{\sum_{j=1}^n\left(f(X_{t_j})-f(X_{t_{j-1}})\right)^2\sum_{j=1}^n\left(g(X_{t_j})-g(X_{t_{j-1}})\right)^2} \\
+      &\le \lim_{||\pi|| \to 0} \sqrt{\sum_{j=1}^n\left(f(X_{t_j})-f(X_{t_{j-1}})\right)^2} \sqrt{\sum_{j=1}^n\left(g(X_{t_j})-g(X_{t_{j-1}})\right)^2}
+    \end{split}
+  \end{equation}
+  By the continuity and finite variation of $g$,
+  \begin{equation}
+    \lim_{||\pi|| \to 0} \sqrt{\sum_{j=1}^n\left(g(X_{t_j})-g(X_{t_{j-1}})\right)^2} = 0
+  \end{equation}
+  and $f$ is of finite quadratic variation,
+  \begin{equation}
+    \lim_{||\pi|| \to 0} \sqrt{\sum_{j=1}^n\left(f(X_{t_j})-f(X_{t_{j-1}})\right)^2} < \infty
+  \end{equation}
+  So $[f,g](T)$ vanishes in the limit as $||\pi_n||$ goes to zero, i.e.,
+  \begin{equation}
+    [f,g](T) =\lim_{||\pi|| \to 0}\sum_{j=1}^n \left(f(X_{t_j})-f(X_{t_{j-1}})\right)\left(g(X_{t_j})-g(X_{t_{j-1}})\right) = 0
+  \end{equation}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 7
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{(a)}
+    Using Ito's lemma, in general suppose we have $X_t = f(t, B_t)$, for some function $f(t,x) \in C^{1,2}$, then
+    \begin{equation}
+      dX_t = f_t dt + f_x dB_t + \frac{1}{2} f_{xx}d[B,B]_t = (f_t + \frac{1}{2}f_{xx})dt + f_x dB_t
+    \end{equation}
+    In our case,
+    \begin{equation}
+      X_t = B_t^6 = f(t,B_t), i.e. f(t,x) = x^6
+    \end{equation}
+    then
+    \begin{equation}
+      f_t = 0, f_x = 6x^5, f_{xx} = 30x^4
+    \end{equation}
+    therefore with $X_t - X_0 = \int_0^t dX_s$ and $dX_t = 6B_t^5 dB_t + 15B_t^4 dt$
+    \begin{equation}
+      X_t - X_0 = 6\int_0^t B_s^5 dB_s \text{(*)} + 15 \int_0^t B_s^4 ds
+    \end{equation}
+    since $B_s$ is Martingale. so (*) is also a martingale, which says it's 0. \\
+    Finally,
+    \begin{equation}
+      E(X_t) = 15\int (\int_0^t B_s^4 ds)dP = 15\int_0^t (\int B_s^4 dP) ds = 15\int_0^t E(B_s^4)ds = 15t^3
+    \end{equation}
+    where we use Fubini's theorem and the kurtosis $E(B_s^4) = 3s^2$.
+    Similarly, we can apply to the other one
+    \begin{equation}
+      E(|X|^3) = \sigma^3(2)!!\sqrt{\frac{2}{\pi}} = 2\sqrt{\frac{2}{\pi}}t^{3/2}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Given the expression of $|C_B^n|^2$, we have its expectation
+    \begin{equation}
+       E|C_B^n|^2 = E\left(\sum_{i=1}^n \left|B_{t_i} - B_{t_{i-1}}\right|^6\right) 
+       + E\left(\sum_{i\neq j} \left|B_{t_i} - B_{t_{i-1}}\right|^3 \left|B_{t_j} - B_{t_{j-1}}\right|^3\right)
+    \end{equation} 
+    Since $B_{t_i} - B_{t_{i-1}}$ and $B_{t_j} - B_{t_{j-1}}$ is independent for all $i \neq j$, therefore,
+    \begin{equation}
+      E|C_B^n|^2 = \sum_{i=1}^n E\left(\left|B_{t_i} - B_{t_{i-1}}\right|^6\right) 
+      + \sum_{i\neq j} E\left|B_{t_i} - B_{t_{i-1}}\right|^3 E\left|B_{t_j} - B_{t_{j-1}}\right|^3
+    \end{equation}
+    since $B_{t_i} - B_{t_{i-1}} \sim B(0,t_i-t_{i-1})$ and using conclusion of (a),
+    \begin{equation}
+      E|C_B^n|^2 = 15\sum_{i=1}^n(t_i-t_{i-1})^3 + \frac{8}{\pi}\sum_{i\neq j}(t_i-t_{i-1})^{3/2}(t_j-t_{j-1})^{3/2}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(c)}
+    Since 
+    \begin{equation}
+      ||\Pi_n|| = \max_{1 \le i \le n} \{t_i-t_{i-1}\}
+    \end{equation}
+    then
+    \begin{equation}
+      \begin{split}
+        E|C_B^n|^2 &\le 15 ||\Pi_n||^2 \sum_{i=1}^n(t_i-t_{i-1}) + \frac{8}{\pi}||\Pi_n|| \sum_{i\neq j}(t_i-t_{i-1})(t_j-t_{j-1})\\
+        &\le 15 ||\Pi_n||^2 \sum_{i=1}^n(t_i-t_{i-1}) + \frac{8}{\pi}||\Pi_n|| \sum_{i}(t_i-t_{i-1})\sum_{j}(t_j-t_{j-1})\\
+        &\le 15 ||\Pi_n||^2 T + \frac{8}{\pi}||\Pi_n|| T^2
+      \end{split}
+    \end{equation}
+    where obviously $T = \sum_{i=1}^n(t_i-t_{i-1})$, then
+    \begin{equation}
+      \lim_{||\Pi_n||\to0}E|C_B^n|^2 \le 15 ||\Pi_n||^2 T + \frac{8}{\pi}||\Pi_n|| T^2 = 0
+    \end{equation}
+    which implies that $\lim_{||\Pi_n||\to0}E|C_B^n|^2=0$. We can conclude that the cubic variation of Brownian motion in $[0, T]$ is $0$.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 8
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  According to the given expression,
+  \begin{equation}
+    \frac{S_{t_i}}{S_{t_{i-1}}} = e^{\sigma(B_{t_i}-B_{t_{i-1}}) + (\mu - \frac{\sigma^2}{2})(t_i-t_{i-1})}
+  \end{equation}
+  Therefore,
+  \begin{equation}
+    \begin{split}
+      (\log{\frac{S_{t_i}}{S_{t_{i-1}}}})^2 &= \left[\sigma(B_{t_i}-B_{t_{i-1}}) + (\mu - \frac{\sigma^2}{2})(t_i-t_{i-1})\right]^2 \\
+      &= \sigma^2(B_{t_i}-B_{t_{i-1}})^2 + 2\sigma(B_{t_i}-B_{t_{i-1}})(\mu-\frac{\sigma^2}{2})(t_i-t_{i-1}) + (\mu - \frac{\sigma^2}{2})^2(t_i-t_{i-1})^2
+    \end{split}
+  \end{equation}
+  Furthermore it is easy to check that
+  \begin{equation}
+    \lim_{||\Pi_n||\to0} (\log{\frac{S_{t_i}}{S_{t_{i-1}}}})^2 = \sigma^2[B,B](T) + 2\sigma(\mu-\frac{\sigma^2}{2})[B,t](T) + (\mu-\frac{\sigma^2}{2})^2 [t,t](T)
+  \end{equation}
+  given the previous expression. Since $B$ is of finite quadratic variation and $t$ is of finite variation and continuous. According to the conclusion of problem 6, we have
+  \begin{equation}
+    \lim_{||\Pi_n||\to0} (\log{\frac{S_{t_i}}{S_{t_{i-1}}}})^2 = \sigma^2[B,B](T) = \sigma^2 T
+  \end{equation}
+\end{homeworkProblem}
+
+\end{document}

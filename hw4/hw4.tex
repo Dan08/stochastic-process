@@ -1,0 +1,491 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework 4} % Assignment title
+\newcommand{\hmwkDueDate}{Oct 6,\ 2014} % Due date
+\newcommand{\hmwkClass}{MTH 9831} % Course/class
+\newcommand{\hmwkClassTime}{Weiyi Chen, Zhenfeng Liang, Mo Shen} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Review Ito isometry}
+    In mathematics, the Ito isometry, named after Kiyoshi Ito, is a crucial fact about Ito stochastic integrals. Let $W : [0, T] \times \Omega \to R$ denote the canonical real-valued Wiener process defined up to time $T > 0$, and let $X : [0, T] \times \Omega \to R$ be a stochastic process that is adapted to the natural filtration $\mathcal{F}_{*}^{W}$ of the Wiener process. Then
+    \begin{equation}
+      {E} \left[ \left( \int_{0}^{T} X_{t} \, \mathrm{d} W_{t} \right)^{2} \right] = {E} \left[ \int_{0}^{T} X_{t}^{2} \, \mathrm{d} t \right]
+    \end{equation}
+    where ${E}$ denotes expectation with respect to classical Wiener measure $\gamma$. In other words, the Ito stochastic integral, as a function, is an isometry of normed vector spaces with respect to the norms induced by the inner products
+    \begin{equation}
+      ( X, Y )_{L^{2} (W)} := {E} \left( \int_{0}^{T} X_{t} \, \mathrm{d} W_{t} \int_{0}^{T} Y_{t} \, \mathrm{d} W_{t} \right) = \int_{\Omega} \left( \int_{0}^{T} X_{t} \, \mathrm{d} W_{t} \int_{0}^{T} Y_{t} \, \mathrm{d} W_{t} \right) \, \mathrm{d} \gamma (\omega)
+    \end{equation}
+    and
+    \begin{equation}
+      ( A, B )_{L^{2} (\Omega)} := {E} ( A B ) = \int_{\Omega} A(\omega) B(\omega) \, \mathrm{d} \gamma (\omega).
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(a)}
+    Since the expectation of Martingale is $0$, additionally with Ito isometry and Fubini's theorem,
+    \begin{equation}
+      \begin{split}
+        cov(X,X) &= E(X^2) - [E(X)]^2 \\
+        &= E(\int_0^1 (\sqrt{t}e^{B_t^2/8})^2 dt) - 0  \\
+        &= \int_\Omega \int_0^1 (\sqrt{t}e^{B(t,w)^2/8})^2 dt dP(w) \\
+        &= \int_0^1 \int_\Omega (\sqrt{t}e^{B(t,w)^2/8})^2 dP(w) dt \\
+        &= \int_0^1 tE(e^{B_t^2/4}) dt
+      \end{split}
+    \end{equation}
+    Now we look at $E(e^{B_t^2/4})$, since $B_t \sim N(0,t)$ let $B_t = \sqrt{t}Z$
+    \begin{equation}
+      \begin{split}
+        E(e^{B_t^2/4}) &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} e^{tZ^2/4}e^{-Z^2/2} dZ \\
+        &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-\frac{Z^2}{2(\frac{2}{2-t})}} dZ \\
+        &= \sqrt{\frac{2}{2-t}} \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \frac{1}{\sqrt{\frac{2}{2-t}}} e^{-\frac{Z^2}{2(\frac{2}{2-t})}} dZ \\
+        &= \sqrt{\frac{2}{2-t}}
+      \end{split}
+    \end{equation}
+    Here we come back to
+    \begin{equation}
+      var(X) = \int_0^1 t\sqrt{\frac{2}{2-t}} dt
+    \end{equation}
+    Let $u = \sqrt{2-t}$, therefore $\frac{du}{dt} = -\frac{1}{2} \frac{1}{\sqrt{2-t}}$, and
+    \begin{equation}
+      var(X) = \int_1^{\sqrt{2}} (2-u^2)2\sqrt{2} du = \frac{16}{3} - \frac{10\sqrt{2}}{3}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Since the expectation of Martingale is $0$, and with Ito isometry,
+    \begin{equation}
+      \begin{split}
+        Var(X) &= E(X^2) - [E(X)]^2 \\
+        &= E \int_a^b f^2(t) (\sin B_t + \cos B_t)^2 dt - 0 \\
+        &= E \int_a^b f^2(t) (1 + \sin 2B_t) dt \\
+        &= \int_a^b f^2(t) dt + \int_a^b f^2(t)E(\sin 2B_t) dt
+      \end{split}
+    \end{equation}
+    We consider $E(\sin 2B_t)$ and find out that
+    \begin{equation}
+      E(\sin 2B_t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \sin (2z) e^{-z^2/2} dz = 0
+    \end{equation}
+    since $\sin (2z)$ is an odd function and $e^{-z^2/2}$ is an even function, which makes $\sin (2z) e^{-z^2/2}$ an odd function. Therefore the answer is
+    \begin{equation}
+      Var(X) = \int_a^b f^2(t) dt
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Review of Ito's lemma}
+     We give a sketch of how one can derive Ito's lemma by expanding a Taylor series and applying the rules of stochastic calculus. Assume $X_t$ is a Ito drift-diffusion process that satisfies the stochastic differential equation
+     \begin{equation}
+       dX_t= \mu_t \, dt + \sigma_t \, dB_t,
+     \end{equation}
+     where $B_t$ is a Wiener process. If $f(t,x)$ is a twice-differentiable scalar function, its expansion in a Taylor series is
+     \begin{equation}
+       df = \frac{\partial f}{\partial t}\,dt + \frac{\partial f}{\partial x}\,dx + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}\,dx^2 + \cdots
+     \end{equation}
+     Substituting $X_t$ for $x$ and $μ_t dt + \sigma t dB_t$ for $dX_t$ gives
+     \begin{equation}
+      df = \frac{\partial f}{\partial t}\,dt + \frac{\partial f}{\partial x}(\mu_t\,dt + \sigma_t\,dB_t) + \frac{1}{2}\frac{\partial^2 f}{\partial x^2} \left (\mu_t^2\,dt^2 + 2\mu_t\sigma_t\,dt\,dB_t + \sigma_t^2\,dB_t^2 \right ) + \cdots.
+     \end{equation}
+     In the limit as $dt \to 0$, the terms $dt^2$ and $dt dB_t$ tend to zero faster than $dB_2$, which is $O(dt)$. Setting the $d_t^2$ and $dt d_B^2$ terms to zero, substituting $dt$ for $d_B^2$, and collecting the $dt$ and $dB$ terms, we obtain
+     \begin{equation}
+       df = \left(\frac{\partial f}{\partial t} + \mu_t\frac{\partial f}{\partial x} + \frac{\sigma_t^2}{2}\frac{\partial^2 f}{\partial x^2}\right)dt + \sigma_t\frac{\partial f}{\partial x}\,dB_t 
+     \end{equation}
+     as required.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(a)}
+    Let $f(t,x) = e^{\sigma x - \frac{\sigma^2}{2}t}$, then
+    \begin{align}
+      f_t(t,x) &= -\frac{\sigma^2}{2} e^{\sigma x - \frac{\sigma^2}{2}t} \\
+      f_x(t,x) &= \sigma e^{\sigma x - \frac{\sigma^2}{2}t} \\
+      f_{xx}(t,x) &= \sigma^2 e^{\sigma x - \frac{\sigma^2}{2}t}
+    \end{align}
+    After putting formulas above into
+    \begin{equation}
+      df(t, X_t) = f_t(t, X_t) dt + f_x(t,X_t)dX_t + \frac{1}{2}f_{xx}(t,X_t)d[X]_t
+    \end{equation}
+    we fortunately have
+    \begin{equation}
+      df(t, B_t) = \sigma e^{\sigma B_s - \frac{\sigma^2t}{2}}
+    \end{equation}
+    By writing the integration form, we find our goal
+    \begin{equation}
+      \frac{1}{\sigma} (f(t,B_t) - f(0,B_0)) = \int_0^t e^{\sigma B_s - \frac{\sigma^2s}{2}} dB_s
+    \end{equation}
+    where $f(0,B_0) = 1$, therefore the answer is
+    \begin{equation}
+      \int_0^t e^{\sigma B_s - \frac{\sigma^2s}{2}} dB_s = \frac{1}{\sigma} (f(t,B_t)-1)
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Apply the last formula in Review of Ito's lemma, let
+    \begin{equation}
+      f_x = \frac{e^{-s}}{1+B_s^2}
+    \end{equation}
+    Obviously we have
+    \begin{align}
+      f &= e^{-s} \arctan B_s \\
+      f_{xx} &= -2 \frac{e^{-s}B_s}{(1+B_s^2)^2} \\
+      f_s &= -e^{-s} \arctan B_s
+    \end{align}
+    Apply Ito's lemma, we have
+    \begin{equation}
+      df = (f_s+\frac{\sigma^2}{2}f_{xx})ds+f_xdx = \left[-e^{-s}\arctan B_s+\frac{\sigma^2}{2}\frac{-2e^{-s}B_s}{(1+B_s^2)^2}\right]ds + (\frac{e^{-s}}{1+B_s^2})dB_s
+    \end{equation}
+    Write it in integral form, we have
+    \begin{equation}
+      f_t - f_0 = \int_0^t(\frac{e^{-s}}{1+B_s^2})dB_s - \int_0^t e^{-s} (\arctan B_s + \frac{B_s}{(1+B_s^2)^2})ds
+    \end{equation}
+    that is
+    \begin{equation}
+      \int_0^t(\frac{e^{-s}}{1+B_s^2})dB_s = e^{-t}\arctan B_t + \int_0^t e^{-s} (\arctan B_s + \frac{B_s}{(1+B_s^2)^2}) ds
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[Problem 3]
+  \begin{homeworkSection}{(a)}
+    Since we are given
+    \begin{equation}
+      dX_t = \lambda(m-X_t)dt + \sigma \sqrt{X_t}dB_t
+    \end{equation}
+    then
+    \begin{equation}
+      E(X_t) = X_0 + E\int_0^t \lambda(m-X_s)ds + E\int_0^t\sqrt{X_s}dB_s = X_0 + \lambda mt - \lambda \int_0^tE(X_s)ds
+    \end{equation}
+    where we used Fubini's theorem. Then we let $f(t) = E(X_t)$, we have 
+    \begin{equation}
+      f(t) = X_0 + \lambda mt - \lambda \int_0^t f(s) ds
+    \end{equation}
+    in differential form,
+    \begin{equation}
+      \lambda f(t) + f'(t) = \lambda m
+    \end{equation}
+    To solve this first order differential equation, we multiply $e^{\lambda t}$ to both sides, we are able to derive
+    \begin{align}
+      (e^{\lambda t}f(t))' &= \lambda me^{\lambda t} \\
+      e^{\lambda t}f(t) &= me^{\lambda t} + c
+    \end{align}
+    We solved as
+    \begin{equation}
+      E(X_t) = f(t) = m - ce^{-\lambda t}
+    \end{equation}
+    With the condition of $X_0 = x$, we can derive $c$ and the equation above becomes
+    \begin{equation}
+      E(X_t) = m - (m-x)e^{-\lambda t}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Our problem is to derive $E(X_t^2)$. So
+    \begin{equation}
+      d(X_t^2) = d(\phi(X_t))
+    \end{equation}
+    where $\phi(x)=x^2$, then
+    \begin{equation}
+      \phi_t= 0, \phi_x = 2x, \phi_{xx} = 2
+    \end{equation}
+    which makes $d(X_t^2)$ become
+    \begin{equation}
+      \begin{split}
+        d(X_t^2) &= 0 + 2X_tdX_t + \frac{1}{2}\cdot 2d[X]_t \\
+        &= 2X_tdX_t + (\lambda(m-X_t)dt + \sigma \sqrt{X_t}dB_t)^2 \\
+        &= 2X_tdX_t + \sigma^2 X_tdt \\
+        &= (2\lambda X_t(m-X_t) + \sigma^2X_t)dt + 2\sigma X_t^{3/2}dB_t
+      \end{split}
+    \end{equation}
+    In integration form,
+    \begin{equation}
+      \begin{split}
+        \int_0^t d(X_t^2) &= X_t^2 - X_0^2 = \int_0^t (2\lambda X_t(m-X_t) + \sigma^2X_t)dt + \int_0^t2\sigma X_t^{3/2}dB_t \\
+        E(X_t^2) &= X_0^2 + \int_0^t(2\lambda m +\sigma^2)E(X_s) - 2\lambda E(X_s^2)ds
+      \end{split}
+    \end{equation}
+    In the same way as part(a), let $g(t) = E(X_t^2)$, we have differential equation
+    \begin{equation}
+      g'(t) = (2\lambda m + \sigma^2)f(t) - 2\lambda g(t)
+    \end{equation}
+    Solving it will generate
+    \begin{equation}
+      e^{2\lambda t}g(t) = \int e^{2\lambda s}(2\lambda m+\sigma^2)f(s)ds +C
+    \end{equation}
+    By solving $g(t)$ and the constant, we are able to derive
+    \begin{equation}
+      \begin{split}
+        Var(X_t) &= E(X_t^2) - [E(X_t)]^2 \\
+        &= \frac{\sigma^2}{\lambda}X_0(e^{-\lambda t}-e^{-2\lambda t}) + \frac{m\sigma^2}{2\lambda}(1-2e^{-\lambda t}+e^{-2\lambda t})
+      \end{split}
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[Problem 4]
+  According to the hint, since
+  \begin{equation}
+    \frac{1}{1-x^2} = \frac{1}{2} (\frac{1}{1+x} + \frac{1}{1-x}) 
+  \end{equation}
+  Then its antiderivative is 
+  \begin{equation}
+    \int \frac{1}{1-x^2} dx = \frac{1}{2} \ln\left|\frac{1+x}{1-x}\right| = f(x)
+  \end{equation}
+  therefore,
+  \begin{align}
+    f_t &= 0 \\
+    f_x &= \frac{1}{1-x^2} \\
+    f_{xx} &= \frac{2x}{(1-x^2)^2}
+  \end{align}
+  Write the original SDE in the problem as
+  \begin{equation}
+    \frac{dX_t}{1-X_t^2} = -\beta^2 X_tdt + \beta dB_t
+  \end{equation}
+  its left part turns to be
+  \begin{equation}
+    df(X_t) = \frac{1}{1-X_t^2}dX_t + \frac{X_t}{(1-X_t^2)^2}d[X]_t
+  \end{equation}
+  where $d[X]_t = \beta^2(1-X_t^2)^2dB_tdB_t = \beta^2(1-X_t^2)^2dt$. Then
+  \begin{equation}
+    df(X_t) = -\beta^2X_tdt + \beta dB_t + \frac{X_t}{(1-X_t^2)^2}\beta^2(1-X_t^2)^2dt 
+  \end{equation}
+  that is
+  \begin{equation}
+    df(X_t) = \beta dB_t
+  \end{equation}
+  Write it in integration form, we have
+  \begin{equation}
+    \frac{1}{2} \ln \left|\frac{1+X_t}{1-X_t} \right| = \beta B_t +f(X_0)
+  \end{equation}
+  i.e.
+  \begin{equation}
+    \frac{1+X_t}{1-X_t} = \exp[2(\beta B_t + f(X_0))]
+  \end{equation}
+  The formula above is solved as
+  \begin{equation}
+    X_t = \frac{\exp[2(\beta B_t + f(X_0))] - 1}{\exp[2(\beta B_t + f(X_0))]+1}
+  \end{equation}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[Problem 5]
+  \begin{homeworkSection}{(a)}
+    Since Brownian Motion itself is a Martingale,
+    \begin{equation}
+      E(B_\tau) = E(B_0) = 0
+    \end{equation}
+    We can also write $E(B_\tau)$ as
+    \begin{equation}
+      E(B_\tau) = E(B_\tau|\tau=\tau_1)P(\tau=\tau_1) + E(B_\tau|\tau=\tau_{-1})P(\tau=\tau_{-1}) = P(\tau=\tau_1) - P(\tau=\tau_{-1})
+    \end{equation}
+    resulting in
+    \begin{equation}
+      P(\tau=\tau_1) = P(\tau=\tau_{-1}) = \frac{1}{2}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(b)}
+    Since the Brownian martingale is a martingale, then
+    \begin{equation}
+      E(X_\tau) = E(X_0) = 1
+    \end{equation}
+    where $X_\tau = e^{\theta B_\tau -\frac{\theta^2}{2}\tau}$.
+  \end{homeworkSection}
+  \begin{homeworkSection}{(c)}
+    Continue to solve the identity given, we figure out $B_1=1$ when $\tau = \tau_1$ and $B_1=-1$ when $\tau = \tau_{-1}$,
+    \begin{equation}
+      1 = E(X_\tau) = \frac{1}{2}\left[E[e^{\theta-\frac{\theta^2}{2}\tau}|\tau=\tau_1] + E[e^{\theta-\frac{\theta^2}{2}\tau}|\tau=\tau_{-1}] \right]
+    \end{equation}  
+    Consider employing a similar identity but replacing $\theta$ by $-\theta$, we have following two fomulas
+    \begin{align}
+      2 &= e^\theta E[e^{-\frac{\theta^2}{2}\tau}|\tau=\tau_1] + e^{-\theta} E[e^{-\frac{\theta^2}{2}\tau}|\tau=\tau_{-1}] \\ 
+      2 &= e^{-\theta} E[e^{-\frac{\theta^2}{2}\tau}|\tau=\tau_1] + e^{\theta}E[e^{-\frac{\theta^2}{2}\tau}|\tau=\tau_{-1}]
+    \end{align}
+    which can be solved as
+    \begin{equation}
+      E[e^{-\frac{\theta^2}{2}\tau}|\tau=\tau_1] = E[e^{-\frac{\theta^2}{2}\tau}|\tau=\tau_{-1}] = \frac{2}{e^{\theta}+e^{-\theta}}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(d)}
+    All the elements of the formula are calculated in former parts, therefore
+    \begin{equation}
+      E[e^{-\frac{\theta^2}{2}\tau}] = \frac{2}{e^{\theta}+e^{-\theta}} \cdot \frac{1}{2} + \frac{2}{e^{\theta}+e^{-\theta}} \cdot \frac{1}{2} =  \frac{2}{e^{\theta}+e^{-\theta}}
+    \end{equation}
+  \end{homeworkSection}
+  \begin{homeworkSection}{(e)}
+    Replace $-\frac{\theta^2}{2}$ by $\lambda$ in part(d), then $\theta = \sqrt{2|\lambda|}$, we obtain
+    \begin{equation}
+      E[e^{\lambda\tau}] = \frac{2}{e^{\sqrt{2|\lambda|}}+e^{-\sqrt{2|\lambda|}}} = \frac{1}{\cosh\sqrt{2|\lambda|}}
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+\end{document}

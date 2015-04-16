@@ -1,0 +1,98 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{xfrac}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+\linespread{1.1} % Line spacing
+
+\begin{document}
+
+\title{MATH 9831 - Homework 1}
+\author{Weiyi Chen, Zhenfeng Liang, Sam Pfeiffer}
+\date{Due on September 15, 2014}
+\maketitle
+
+\section*{Problem 1}
+	Let
+	\begin{equation}
+		Y = \sum_{k=1}^n \frac{\int_{E_k} XdP}{P[E_k]} \textbf{1}_{E_k}(w)
+	\end{equation}
+	Y is the conditional expectation of X if it meets 2 criteria:
+	\begin{itemize}
+		\item Y is $\mathcal{G}$-measurable. \\
+		We know that Y is $\mathcal{G}$-measurable since Y is constant in $E_k$ for $k=1:n$, and the only term containing $\omega$ is $\textbf{1}_{E_k}(\omega)$, which is clearly $\mathcal{G}$-measurable.
+		\item $\int_A YdP = \int_A XdP$ for all $A \in \mathcal{G}$ where $Y=E(X|\mathcal{G})$. \\
+		According to linearity of expectation,
+		\begin{equation}
+			\int_A YdP = \int_A \sum_{k=1}^n \frac{\int_{E_k} XdP}{P[E_k]} \textbf{1}_{E_k}(w) dP = \sum_{k=1}^n \int_A \frac{\int_{E_k} XdP}{P[E_k]} \textbf{1}_{E_k}(w) dP = \sum_{k=1}^n \int_{A\cap E_k} \frac{\int_{E_k} XdP}{P[E_k]} dP
+		\end{equation}
+		Since $A \in \mathcal{G}$, then $A$ is some union of $E_i$'s, say $A = \cup_{i\in I} E_i$ where $I \subseteq \{1,2,...,n\}$, we have
+		\begin{align}
+			\sum_{k=1}^n \int_{A\cap E_k} \frac{\int_{E_k} XdP}{P[E_k]} dP &= \sum_{E_k \subseteq A} \int_{E_k} \frac{\int_{E_k} XdP}{P[E_k]} dP \\
+			&= \sum_{E_k \subseteq A} \frac{\int_{E_k} XdP}{P[E_k]} \int_{E_k} dP \\
+			&= \sum_{E_k \subseteq A} \frac{\int_{E_k} XdP}{P[E_k]} P[E_k] \\
+			&= \sum_{E_k \subseteq A} \int_{E_k} XdP \\
+			&= \int_A XdP
+		\end{align}
+	\end{itemize}
+	Y meets both criteria. Therefore, by definition, $Y = E(X|G)(w)$.
+\section*{Problem 2}
+	\begin{itemize}
+		\item Integrability: we require $E|X_t| < \infty $. Since the sum of $\xi_i$'s is between $-t$ and $t$, therefore
+		\begin{equation}
+			E|X_t| = E\left|\sum_{i=1}^t \xi_i\right| \le t < \infty
+		\end{equation}
+		\item Adapted: $X_t$ is obviously adapted since we are considering natural filtration. That is, $X_t$ is only composed of elements $\xi_i$ for $i\le t$ which are $\mathcal{F}_i$-measurable, $X_t$ is obviously adapted.
+		\item Expected value of next step: the expected value of $X_{t+1}$ under current filtration is
+		\begin{align}
+			E(X_{t+1}|\mathcal{F}_t) &= E(\xi_{t+1} + \sum_{i=1}^{t}\xi_{i}|\mathcal{F}_t) \\
+			&= E(\xi_{t+1}|\mathcal{F}_t) + E(\sum_{i=1}^{t}\xi_{i}|\mathcal{F}_t) \\
+			&= E(\xi_{t+1}) + E(X_t|\mathcal{F}_t) \\
+			&= 1p - 1(1-p) + X_t \\
+			&= X_t + 2p -1
+		\end{align}
+		If $p = 1 / 2$, then $E(X_{t+1}|\mathcal{F}_t) = X_t$, so $X_t$ is a martingale. \\
+		If $p > 1 / 2$, then $E(X_{t+1}|\mathcal{F}_t) > X_t$, so $X_t$ is a submartingale. \\
+		If $p < 1 / 2$, then $E(X_{t+1}|\mathcal{F}_t) < X_t$, so $X_t$ is a supermartingale.
+	\end{itemize}
+\section*{Problem 3}
+	\begin{itemize}
+		\item Integrable \\
+		We know that $S_n$ is a martingale and therefore must be integrable, i.e., $E|S_n| < \infty$. Then we have 
+		\begin{equation}
+			E|C_n| = E|(S_n-K)^{+}| \leq E|S_n-K| \leq E|S_n| + E\left|-K\right| = E|S_n| + K < \infty
+		\end{equation}
+		Similarly,
+		\begin{equation}
+			E|P_n| = E|(K-S_n)^{+}| \leq E|K-S_n| \leq E|K| + E|-S_n| = K + E|S_n| < \infty
+		\end{equation}
+		So $C_n$ and $P_n$ are integrable.
+		\item Adapted \\
+		Since $K$ is constant, both $C_n$ and $P_n$ are adapted since their only other component is $S_n$, which is adapted.
+		\item Expectation of next step \\
+		We verify both cases for the option price,
+		\begin{equation}
+			E(C_{n+1}|\mathcal{F}_t) = E((S_{n+1}-K)^{+}|\mathcal{F}_t) \geq E(S_{n+1}-K|\mathcal{F}_t) = E(S_{n+1}|\mathcal{F}_t)) -K = S_n -K
+		\end{equation}
+		and
+		\begin{equation}
+			E(C_{n+1}|\mathcal{F}_t) = E((S_{n+1}-K)^{+}|\mathcal{F}_t) \geq E(0|\mathcal{F}_t) = 0
+		\end{equation}
+		Therefore $E(C_{n+1}|\mathcal{F}_t) \geq (S_{n}-K)^{+} = C_n$, which means $C_n$ is a submartingale. Similarly, we can show that $P_n$ is a submartingale by
+		\begin{equation}
+			E(P_{n+1}|\mathcal{F}_t) = E((K-S_{n+1})^{+}|\mathcal{F}_t) \geq E(K-S_{n+1}|\mathcal{F}_t) = K - E(S_{n+1}|\mathcal{F}_t)) = K - S_n
+		\end{equation}
+		and
+		\begin{equation}
+			E(P_{n+1}|\mathcal{F}_t) = E((K-S_{n+1})^{+}|\mathcal{F}_t) \geq E(0|\mathcal{F}_t) = 0
+		\end{equation}
+		Therefore $E(P_{n+1}|\mathcal{F}_t) \geq (K-S_{n})^{+} = P_n$, which means $P_n$ is a submartingale.
+	\end{itemize}
+\end{document}
